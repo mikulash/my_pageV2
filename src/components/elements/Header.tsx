@@ -1,29 +1,39 @@
 import React from "react";
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="dark" variant="dark" sticky="top">
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
+        <Navbar.Brand>
+          <NavLink className={"nav-link"} to="/">
+            Mikulas Heinz
+          </NavLink>
+        </Navbar.Brand>
+        <Nav className="me-auto">
+          <NavLink className={"nav-link"} to="/">
+            Home
+          </NavLink>
+          <NavLink className="nav-link" to="/about">
+            About me
+          </NavLink>
+          <NavLink className="nav-link" to="/projects">
+            Projects
+          </NavLink>
+          <NavLink className="nav-link" to="/resume">
+            Resume
+          </NavLink>
+          <a href="https://github.com/mikulash" className="nav-link">
+            Github
+          </a>
+          <a
+            href="https://www.linkedin.com/in/mikulas-heinz/"
+            className="nav-link"
+          >
+            LinkedIn
+          </a>
+        </Nav>
       </Container>
     </Navbar>
   );
